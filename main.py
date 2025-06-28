@@ -1,7 +1,10 @@
-import requests
-import random
+import requests, random, datetime as dt, os
 from twilio.rest import Client
-import datetime as dt
+from dotenv import load_dotenv
+
+load_dotenv()
+account_sid = os.getenv("TWILIO_ACCOUNT_SID")
+auth_token = os.getenv("TWILIO_AUTH_TOKEN")
 
 try:
     response = requests.get("http://127.0.0.1:5000/api/love-quotes")
@@ -18,7 +21,7 @@ def show_daily():
     hour = dt.datetime.now().hour
     minute = dt.datetime.now().minute
 
-    if hour == 7 and minute == 00:
+    if hour == 20 and minute == 20:
         client = Client(account_sid, auth_token)
         try:
             message = client.messages.create(
