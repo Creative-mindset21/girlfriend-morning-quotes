@@ -21,7 +21,7 @@ def show_daily():
     hour = dt.datetime.now().hour
     minute = dt.datetime.now().minute
 
-    if hour == 20 and minute == 20:
+    if hour == 7 and minute == 00:
         client = Client(account_sid, auth_token)
         try:
             message = client.messages.create(
