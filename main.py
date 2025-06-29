@@ -24,13 +24,13 @@ def show_daily():
     hour = dt.datetime.now().hour
     minute = dt.datetime.now().minute
 
-    if hour == 4 and minute == 00:
+    if hour == 7 and minute == 00:
         client = Client(account_sid, auth_token)
         try:
             message = client.messages.create(
                 from_="whatsapp:+14155238886",
                 body=f"Hey {name}{emoji}\n\n{quote}\n\nI hope this made you smile my love {emoji}",
-                to="whatsapp:+2348144613052",
+                to="whatsapp:+2348153857254",
             )
             print(message.status)
         except Exception as e:
